@@ -16,6 +16,7 @@ function docker_install()
 function check_mtp_install()
 {
     echo "检测docker mtproxy 安装情况..."
+    systemctl start docker
     docker ps -a | grep nginx-mtproxy
     if [ $? -eq 0 ]; then
         echo "检测到docker mtproxy已安装!"
